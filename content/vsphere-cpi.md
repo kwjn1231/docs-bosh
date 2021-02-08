@@ -155,6 +155,7 @@ Schema for `cloud_properties` section:
     * **name** [String, optional]: Name of the storage policy to be applied to the VM and its ephemeral disk. Available in v53+
 * **nsxt** [Dictionary, optional]: [VMware NSX](http://www.vmware.com/products/nsx.html) additions section. Available in CPI v45+.
     * **ns_groups** [Array, optional]: A collection of [NS Groups](http://pubs.vmware.com/nsxt-11/index.jsp?topic=%2Fcom.vmware.nsxt.admin.doc%2FGUID-718E769B-8D89-485B-8DBD-04F1F82CFE14.html) names that the instances should belong to. Available in NSX-T v1.1+.
+    * **use_policy_api** [Boolean, optional]: Uses the [Policy API](https://blogs.vmware.com/networkvirtualization/2020/06/navigating-nsxt-policy-apis.html) when placing VMs in Policy (not Manager) NSX-T groups. (NSX-T groups define VMs as load balancer backends.) This feature is experimental. Default: `false`. Available in v54.1.2+.
     * **vif_type** [String, optional]: Supported types: `PARENT`, `null`. Overrides the global `default_vif_type`. Available in NSX-T v2.0+.
     * **lb** [Dictionary, optional]: NSX-T logical Load Balancer. Available in CPI v48+
         * **server_pools** [Array, optional] Server Pool must exist prior to the deployment. For static server pool, VM is directly added to the server pool. If server pool is dynamic, CPI looks up the NSGroup and adds the VM to the NSGroup.
